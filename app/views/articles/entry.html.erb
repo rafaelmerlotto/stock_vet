@@ -1,0 +1,17 @@
+<div class="w-full h-full flex flex-col items-center justify-center gap-3">
+
+<%= form_with model: @article, class:"w-1/2 h-full flex flex-col items-start justify-center gap-3" do |form| %>
+  
+   <div  class="w-full h-full">
+    <%= form.label :quantity %><br>
+    <%= form.text_field :quantity, class:"rounded h-[40px] w-full"%>
+    <% @article.errors.full_messages_for(:quantity).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+ <div class="w-full h-full">
+    <%= form.submit  class:"w-1/2 h-[40px] bg-slate-700 text-white flex justify-center items-center rounded mt-9 cursor-pointer"%>
+  </div>
+   <% end %>
+</div>

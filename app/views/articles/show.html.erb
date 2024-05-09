@@ -1,0 +1,19 @@
+<div class="w-full h-full flex flex-col items-center justify-center gap-3 p-9">
+
+ <div class="w-full h-auto flex justify-start items-start gap-4 mb-7">
+ 
+ <%= link_to "Edit", edit_article_path(@article), class:"w-[60px] h-[30px] bg-blue-400 text-white flex justify-center items-center rounded  cursor-pointer"%>
+    <%= link_to "Delete", article_path(@article),class:"w-[60px] h-[30px] bg-red-400 text-white flex justify-center items-center rounded  cursor-pointer", data:{ 
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+    }%>
+
+</div>
+
+  <h1 class="text-3xl text-slate-600 "> <%=@article.name%> </h1>
+  <h1 class="text-sm text-slate-600 "> <%= @article.note%> </h1>
+  <p>Stock: <%=@article.quantity%> </p>
+
+
+
+</div>
