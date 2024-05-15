@@ -1,8 +1,12 @@
 class ArticlesController < ApplicationController
 
   def index
-    @categories = Category.all
-    @articles = Article.all
+    
+    @categories = Category.all.order(name: :asc).load_async
+
+  
+    @pagy, @articles = pagy_countless(FindArticles.new.call(params).load_async, items: 12)
+
   end
 
   def show
@@ -27,9 +31,6 @@ class ArticlesController < ApplicationController
     article
   end
 
-  def entry
-    article
-  end
 
   def update
     @article = Article.find(params[:id])

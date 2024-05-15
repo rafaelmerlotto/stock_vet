@@ -1,0 +1,10 @@
+<%= link_to article_path(article.id), class:"article", 'data-turbo-frame': '_top'  do%>
+   <div class="w-full h-full flex flex-col">
+  
+        <li class="w-full border-b-2 mt-6 flex">
+           <p class="w-1/3"> <%= article.name %></p>
+          <p class="w-1/3 text-red-300">  <%= article.quantity%></p>
+        </li>
+  
+   </div>
+<%end%>

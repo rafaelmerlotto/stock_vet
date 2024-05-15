@@ -1,7 +1,7 @@
-<div class="w-full h-full flex flex-col items-center justify-center gap-3 p-9">
-
+<div class="w-full h-full flex flex-col items-center justify-center gap-3 p-4">
+ <%= link_to "←", articles_path, class:"w-full text-2xl text-slate-600 text-start" %>
  <div class="w-full h-auto flex justify-start items-start gap-4 mb-7">
- 
+
  <%= link_to "Edit", edit_article_path(@article), class:"w-[60px] h-[30px] bg-blue-400 text-white flex justify-center items-center rounded  cursor-pointer"%>
     <%= link_to "Delete", article_path(@article),class:"w-[60px] h-[30px] bg-red-400 text-white flex justify-center items-center rounded  cursor-pointer", data:{ 
     turbo_method: :delete,
